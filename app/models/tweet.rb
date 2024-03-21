@@ -13,4 +13,9 @@ class Tweet < ApplicationRecord
     # adding a questions mark to the end of a method name is a convention in Ruby to indicate that the method returns a boolean value
     tweet_id?
   end
+
+  def publish_to_twitter!
+    tweet = twitter_account.client.update(body)
+    update(tweet_id: tweet.id)
+  end
 end
