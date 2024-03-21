@@ -4,6 +4,8 @@
 # password:string virtual
 # password_confirmation:string virtual
 class User < ApplicationRecord
+    has_many :twitter_accounts
+    
     has_secure_password
 
     # validates if we really have an email for the user, meaning its more or a less a required field when creating a new user

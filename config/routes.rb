@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get "password/reset/edit", to: "password_resets#edit"
   patch "password/reset/edit", to: "password_resets#update"
 
+  get "auth/twitter2/callback", to: "omniauth_callbacks#twitter2" 
+  # Defines a route that maps HTTP GET requests to the path /auth/twitter2/callback to the OmniauthCallbacksController action twitter2
+
   root to: "main#index"
   # Defines the root path route ("/")
   # root "posts#index"
