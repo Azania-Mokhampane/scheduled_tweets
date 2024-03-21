@@ -6,13 +6,7 @@
  model is required for the following code to work 
 <%
 =end%>
- <% if form.object.errors.any? %>
-     <div class="alert alert-danger">
-        <% form.object.errors.full_messages.each do |message| %>
-          <div><%= message %></div>
-        <% end %>
-     </div>
-   <% end %> 
+ <%= render "shared/form_errors", form:form %> 
    <div class="mb-3">
        <%= form.label :password %>
        <%= form.password_field :password, class: "form-control",  placeholder: "Enter password" %>
