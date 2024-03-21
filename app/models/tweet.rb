@@ -8,4 +8,9 @@ class Tweet < ApplicationRecord
   after_initialize do
     self.publish_at ||= 24.hours.from_now
   end
+
+  def published?
+    # adding a questions mark to the end of a method name is a convention in Ruby to indicate that the method returns a boolean value
+    tweet_id?
+  end
 end
