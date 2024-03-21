@@ -9,6 +9,12 @@ class Tweet < ApplicationRecord
     self.publish_at ||= 24.hours.from_now
   end
 
+  after_save_commit do
+    if publish_at_previously_changed?
+      TweetJob.set(wait_until: publish_at).perform_later(self)
+    end
+  end
+
   def published?
     # adding a questions mark to the end of a method name is a convention in Ruby to indicate that the method returns a boolean value
     tweet_id?

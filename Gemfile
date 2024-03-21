@@ -77,3 +77,5 @@ gem "omniauth-twitter2", "~> 0.1.0"
 gem "bootstrap-icons", "~> 1.0"
 
 gem "twitter", "~> 8.0"
+
+gem "sidekiq", "~> 7.2"
