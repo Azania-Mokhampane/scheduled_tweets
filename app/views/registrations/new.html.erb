@@ -1,4 +1,7 @@
-<h1>Sign Up Form</h1>
+
+<div class="d-flex align-items-center justify-content-center">
+  <h1>Sign Up Form</h1>
+</div>
 
 <%= form_with model: @user, url: sign_up_path do |form| %>
   <% if form.object.errors.any? %>
